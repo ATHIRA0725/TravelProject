@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url({% static 'images/img2.jpg' %});background-repeat: no-repeat;background-size:cover;margin-left:30%;">
+
+
+<h1 style="color:white;font-style:italic;font-size:60px;font-family:serif;">Registration page</h1><br>
+<form action="register" method="post" style="font-size:30px;background-image:url({% static 'images/img5.jpg' %});background-repeat: no-repeat;background-size:cover;
+                          border:2px solid black; width:50%;">
+
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter your UserName" style="padding:10px;background-color:aqua;margin-left:20%;margin-top:9%;"><br><br>
+    <input type="text" name="firstname" placeholder="Enter your FirstName" style="padding:10px;background-color:aqua;margin-left:20%;"><br><br>
+    <input type="text" name="lastname" placeholder="Enter your LastName" style="padding:10px;background-color:aqua;margin-left:20%;"><br><br>
+    <input type="email" name="mailid" placeholder="Enter your Emailid" style="padding:10px;background-color:aqua;margin-left:20%;"><br><br>
+    <input type="password" name="password1" placeholder="Enter your password" style="padding:10px;background-color:aqua;margin-left:20%;"><br><br>
+    <input type="password" name="confirm" placeholder="Confirm your password" style="padding:10px;background-color:aqua;margin-left:20%;"><br><br>
+    <input type="submit" style="padding:10px;background-color:lightyellow;margin-left:35%;"><br><br>
+</form>
+{% for msg in messages %}
+<h1 style="color:darkblue;">{{msg}}</h1>
+{% endfor %}
+</body>
+</html>
